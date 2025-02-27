@@ -9,5 +9,5 @@ public:
   void keyReleased(sf::Keyboard::Key key) override {}
   void mousePressed() override {}
   void mouseReleased() override {}
-  // void drawBranch(float x1, float y1, float angle, float length, int depth);
+  // void drawBranch(float x1, float y1, float angle, float length, int depth); // fractal tree example
 };

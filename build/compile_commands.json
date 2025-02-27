@@ -1,15 +1,15 @@
 [
 {
   "directory": "/home/akhilsoman/Documents/VS Code/c++/imgui test/build",
-  "command": "/usr/bin/c++ -DIMGUI_USER_CONFIG=\\\"imconfig-SFML.h\\\" -DSFML_STATIC -I\"/home/akhilsoman/Documents/VS Code/c++/imgui test/external\" -I\"/home/akhilsoman/Documents/VS Code/c++/imgui test/build/_deps/imgui-src\" -I\"/home/akhilsoman/Documents/VS Code/c++/imgui test/build/_deps/imgui-sfml-src\" -I\"/home/akhilsoman/Documents/VS Code/c++/imgui test/build/_deps/sfml-src/include\" -g -o CMakeFiles/imgui-test.dir/main.cpp.o -c \"/home/akhilsoman/Documents/VS Code/c++/imgui test/main.cpp\"",
+  "command": "/usr/bin/c++ -DIMGUI_USER_CONFIG=\\\"imconfig-SFML.h\\\" -DSFML_STATIC -I\"/home/akhilsoman/Documents/VS Code/c++/imgui test/external\" -I\"/home/akhilsoman/Documents/VS Code/c++/imgui test/build/_deps/imgui-src\" -I\"/home/akhilsoman/Documents/VS Code/c++/imgui test/build/_deps/imgui-sfml-src\" -I\"/home/akhilsoman/Documents/VS Code/c++/imgui test/build/_deps/sfml-src/include\" -g -o CMakeFiles/Crocessing.dir/main.cpp.o -c \"/home/akhilsoman/Documents/VS Code/c++/imgui test/main.cpp\"",
   "file": "/home/akhilsoman/Documents/VS Code/c++/imgui test/main.cpp",
-  "output": "CMakeFiles/imgui-test.dir/main.cpp.o"
+  "output": "CMakeFiles/Crocessing.dir/main.cpp.o"
 },
 {
   "directory": "/home/akhilsoman/Documents/VS Code/c++/imgui test/build",
-  "command": "/usr/bin/c++ -DIMGUI_USER_CONFIG=\\\"imconfig-SFML.h\\\" -DSFML_STATIC -I\"/home/akhilsoman/Documents/VS Code/c++/imgui test/external\" -I\"/home/akhilsoman/Documents/VS Code/c++/imgui test/build/_deps/imgui-src\" -I\"/home/akhilsoman/Documents/VS Code/c++/imgui test/build/_deps/imgui-sfml-src\" -I\"/home/akhilsoman/Documents/VS Code/c++/imgui test/build/_deps/sfml-src/include\" -g -o CMakeFiles/imgui-test.dir/external/TextEditor.cpp.o -c \"/home/akhilsoman/Documents/VS Code/c++/imgui test/external/TextEditor.cpp\"",
+  "command": "/usr/bin/c++ -DIMGUI_USER_CONFIG=\\\"imconfig-SFML.h\\\" -DSFML_STATIC -I\"/home/akhilsoman/Documents/VS Code/c++/imgui test/external\" -I\"/home/akhilsoman/Documents/VS Code/c++/imgui test/build/_deps/imgui-src\" -I\"/home/akhilsoman/Documents/VS Code/c++/imgui test/build/_deps/imgui-sfml-src\" -I\"/home/akhilsoman/Documents/VS Code/c++/imgui test/build/_deps/sfml-src/include\" -g -o CMakeFiles/Crocessing.dir/external/TextEditor.cpp.o -c \"/home/akhilsoman/Documents/VS Code/c++/imgui test/external/TextEditor.cpp\"",
   "file": "/home/akhilsoman/Documents/VS Code/c++/imgui test/external/TextEditor.cpp",
-  "output": "CMakeFiles/imgui-test.dir/external/TextEditor.cpp.o"
+  "output": "CMakeFiles/Crocessing.dir/external/TextEditor.cpp.o"
 },
 {
   "directory": "/home/akhilsoman/Documents/VS Code/c++/imgui test/build/_deps/sfml-build/src/SFML/System",

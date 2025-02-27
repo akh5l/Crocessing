@@ -1,9 +1,7 @@
 cmake_minimum_required(VERSION 3.28.0)
-project(imgui-test VERSION 0.1.0 LANGUAGES C CXX)
+project(Crocessing VERSION 0.1.0 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 17)
-# set(CMAKE_FIND_PACKAGE_PREFER_CONFIG TRUE)
-# set(IMGUI_SFML_FIND_SFML OFF)  # Ignore system SFML
 
 # Fetch SFML, ImGui, and ImGui-SFML from GitHub
 include(FetchContent)
@@ -37,16 +35,16 @@ FetchContent_MakeAvailable(imgui-sfml)
 
 
 # Add the executable for the project
-add_executable(imgui-test main.cpp external/TextEditor.cpp)
+add_executable(Crocessing main.cpp external/TextEditor.cpp)
 
 # Include paths for ImGui and ImGui-SFML
-target_include_directories(imgui-test PRIVATE 
+target_include_directories(Crocessing PRIVATE 
     ${imgui_SOURCE_DIR} 
     ${imgui-sfml_SOURCE_DIR}
 )
 
 # Link SFML, ImGui, and ImGui-SFML
-target_link_libraries(imgui-test PRIVATE 
+target_link_libraries(Crocessing PRIVATE 
     SFML::Graphics
     SFML::Window
     SFML::System

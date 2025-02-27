@@ -63,13 +63,13 @@ CMAKE_BINARY_DIR = "/home/akhilsoman/Documents/VS Code/c++/imgui test/build"
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/imgui-test.dir/all
+all: CMakeFiles/Crocessing.dir/all
 all: _deps/sfml-build/all
 all: _deps/imgui-sfml-build/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/imgui-test.dir/codegen
+codegen: CMakeFiles/Crocessing.dir/codegen
 codegen: _deps/sfml-build/codegen
 codegen: _deps/imgui-sfml-build/codegen
 .PHONY : codegen
@@ -80,7 +80,7 @@ preinstall: _deps/imgui-sfml-build/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/imgui-test.dir/clean
+clean: CMakeFiles/Crocessing.dir/clean
 clean: _deps/sfml-build/clean
 clean: _deps/imgui-sfml-build/clean
 .PHONY : clean
@@ -208,39 +208,39 @@ _deps/sfml-build/src/SFML/Window/clean: _deps/sfml-build/src/SFML/Window/CMakeFi
 .PHONY : _deps/sfml-build/src/SFML/Window/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/imgui-test.dir
+# Target rules for target CMakeFiles/Crocessing.dir
 
 # All Build rule for target.
-CMakeFiles/imgui-test.dir/all: _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all
-CMakeFiles/imgui-test.dir/all: _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/all
-CMakeFiles/imgui-test.dir/all: _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
-CMakeFiles/imgui-test.dir/all: _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui-test.dir/build.make CMakeFiles/imgui-test.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui-test.dir/build.make CMakeFiles/imgui-test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/akhilsoman/Documents/VS Code/c++/imgui test/build/CMakeFiles" --progress-num=9,10,11 "Built target imgui-test"
-.PHONY : CMakeFiles/imgui-test.dir/all
+CMakeFiles/Crocessing.dir/all: _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all
+CMakeFiles/Crocessing.dir/all: _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/all
+CMakeFiles/Crocessing.dir/all: _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
+CMakeFiles/Crocessing.dir/all: _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Crocessing.dir/build.make CMakeFiles/Crocessing.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Crocessing.dir/build.make CMakeFiles/Crocessing.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/akhilsoman/Documents/VS Code/c++/imgui test/build/CMakeFiles" --progress-num=1,2,3 "Built target Crocessing"
+.PHONY : CMakeFiles/Crocessing.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/imgui-test.dir/rule: cmake_check_build_system
+CMakeFiles/Crocessing.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/akhilsoman/Documents/VS Code/c++/imgui test/build/CMakeFiles" 81
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/imgui-test.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Crocessing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/akhilsoman/Documents/VS Code/c++/imgui test/build/CMakeFiles" 0
-.PHONY : CMakeFiles/imgui-test.dir/rule
+.PHONY : CMakeFiles/Crocessing.dir/rule
 
 # Convenience name for target.
-imgui-test: CMakeFiles/imgui-test.dir/rule
-.PHONY : imgui-test
+Crocessing: CMakeFiles/Crocessing.dir/rule
+.PHONY : Crocessing
 
 # codegen rule for target.
-CMakeFiles/imgui-test.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui-test.dir/build.make CMakeFiles/imgui-test.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/akhilsoman/Documents/VS Code/c++/imgui test/build/CMakeFiles" --progress-num=9,10,11 "Finished codegen for target imgui-test"
-.PHONY : CMakeFiles/imgui-test.dir/codegen
+CMakeFiles/Crocessing.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Crocessing.dir/build.make CMakeFiles/Crocessing.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/akhilsoman/Documents/VS Code/c++/imgui test/build/CMakeFiles" --progress-num=1,2,3 "Finished codegen for target Crocessing"
+.PHONY : CMakeFiles/Crocessing.dir/codegen
 
 # clean rule for target.
-CMakeFiles/imgui-test.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui-test.dir/build.make CMakeFiles/imgui-test.dir/clean
-.PHONY : CMakeFiles/imgui-test.dir/clean
+CMakeFiles/Crocessing.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Crocessing.dir/build.make CMakeFiles/Crocessing.dir/clean
+.PHONY : CMakeFiles/Crocessing.dir/clean
 
 #=============================================================================
 # Target rules for target _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir
@@ -348,7 +348,7 @@ _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/all: _deps/sfml-build/src/SFML/
 _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/all: _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/build.make _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/build.make _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/akhilsoman/Documents/VS Code/c++/imgui test/build/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8 "Built target ImGui-SFML"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/akhilsoman/Documents/VS Code/c++/imgui test/build/CMakeFiles" --progress-num=4,5,6,7,8,9,10,11 "Built target ImGui-SFML"
 .PHONY : _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/all
 
 # Build rule for subdir invocation for target.
@@ -365,7 +365,7 @@ ImGui-SFML: _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/rule
 # codegen rule for target.
 _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/build.make _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/akhilsoman/Documents/VS Code/c++/imgui test/build/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8 "Finished codegen for target ImGui-SFML"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/akhilsoman/Documents/VS Code/c++/imgui test/build/CMakeFiles" --progress-num=4,5,6,7,8,9,10,11 "Finished codegen for target ImGui-SFML"
 .PHONY : _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/codegen
 
 # clean rule for target.

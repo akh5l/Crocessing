@@ -162,17 +162,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named imgui-test
+# Target rules for targets named Crocessing
 
 # Build rule for target.
-imgui-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 imgui-test
-.PHONY : imgui-test
+Crocessing: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Crocessing
+.PHONY : Crocessing
 
 # fast build rule for target.
-imgui-test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui-test.dir/build.make CMakeFiles/imgui-test.dir/build
-.PHONY : imgui-test/fast
+Crocessing/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Crocessing.dir/build.make CMakeFiles/Crocessing.dir/build
+.PHONY : Crocessing/fast
 
 #=============================================================================
 # Target rules for targets named sfml-system
@@ -231,7 +231,7 @@ external/TextEditor.o: external/TextEditor.cpp.o
 
 # target to build an object file
 external/TextEditor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui-test.dir/build.make CMakeFiles/imgui-test.dir/external/TextEditor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Crocessing.dir/build.make CMakeFiles/Crocessing.dir/external/TextEditor.cpp.o
 .PHONY : external/TextEditor.cpp.o
 
 external/TextEditor.i: external/TextEditor.cpp.i
@@ -239,7 +239,7 @@ external/TextEditor.i: external/TextEditor.cpp.i
 
 # target to preprocess a source file
 external/TextEditor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui-test.dir/build.make CMakeFiles/imgui-test.dir/external/TextEditor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Crocessing.dir/build.make CMakeFiles/Crocessing.dir/external/TextEditor.cpp.i
 .PHONY : external/TextEditor.cpp.i
 
 external/TextEditor.s: external/TextEditor.cpp.s
@@ -247,7 +247,7 @@ external/TextEditor.s: external/TextEditor.cpp.s
 
 # target to generate assembly for a file
 external/TextEditor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui-test.dir/build.make CMakeFiles/imgui-test.dir/external/TextEditor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Crocessing.dir/build.make CMakeFiles/Crocessing.dir/external/TextEditor.cpp.s
 .PHONY : external/TextEditor.cpp.s
 
 main.o: main.cpp.o
@@ -255,7 +255,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui-test.dir/build.make CMakeFiles/imgui-test.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Crocessing.dir/build.make CMakeFiles/Crocessing.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -263,7 +263,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui-test.dir/build.make CMakeFiles/imgui-test.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Crocessing.dir/build.make CMakeFiles/Crocessing.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -271,7 +271,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui-test.dir/build.make CMakeFiles/imgui-test.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Crocessing.dir/build.make CMakeFiles/Crocessing.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -286,8 +286,8 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... Crocessing"
 	@echo "... ImGui-SFML"
-	@echo "... imgui-test"
 	@echo "... sfml-graphics"
 	@echo "... sfml-system"
 	@echo "... sfml-window"
