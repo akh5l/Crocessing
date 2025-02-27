@@ -6,7 +6,9 @@
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
+#include <future>
 #include <iostream>
+#include <thread>
 #include <vector>
 
 TextEditor editor;
@@ -16,41 +18,56 @@ void setupEditor() {
   editor.SetPalette(TextEditor::GetLightPalette());
 
   editor.SetTabSize(4);
-  editor.SetText("\nvoid CSketch::setup() {\n\n}\nvoid CSketch::draw() {\n\n}\n");
+  editor.SetText(
+      "\nvoid CSketch::setup() {\n\n}\nvoid CSketch::draw() {\n\n}\n");
+}
+
+// Function to run a system command asynchronously
+void run_command_async(const std::string &cmd) { std::system(cmd.c_str()); }
+
+void writeFile(const std::vector<char> &code, std::string filePath) {
+  std::cout << "Saving to " << filePath << std::endl;
+  std::ofstream outFile(filePath);
+  outFile.write("#include \"CSketch.hpp\"\n", 23);
+  outFile.write(code.data(), std::strlen(code.data()));
+  outFile.close();
 }
 
 void execute_code(const std::vector<char> &code) {
   // Create a temporary file to store the C++ code
-  std::ofstream outFile("../app/testsketch.cpp");
-  outFile.write("#include \"CSketch.hpp\"\n", 23);
-  outFile.write(code.data(), std::strlen(code.data()));
-  outFile.close();
+  writeFile(code, "../app/testsketch.cpp");
 
-  int configure_result = std::system("cmake -S ../app -B ../app/build");
-  if (configure_result != 0) {
-    std::cerr << "CMake configuration failed." << std::endl;
-    return;
+  // Use a future to run the compilation and execution asynchronously
+  std::vector<std::future<void>> futures;
+
+  futures.push_back(std::async(std::launch::async, run_command_async,
+                               "cmake -S ../app -B ../app/build"));
+  futures.push_back(std::async(std::launch::async, run_command_async,
+                               "cmake --build ../app/build"));
+
+  // Wait for all commands to finish
+  for (auto &f : futures) {
+    f.get(); // Will block only after starting all commands
   }
 
-  int build_result = std::system("cmake --build ../app/build");
-  if (build_result != 0) {
-    std::cerr << "Compilation failed." << std::endl;
-    return;
-  }
-
-  int run_result = std::system("../app/build/sketch1");
-  if (run_result != 0) {
-    std::cerr << "Execution failed." << std::endl;
-  }
+// Now, run the executable in the background:
+#ifdef _WIN32
+  std::system(
+      "start /B ../app/build/sketch1"); // On Windows, run in the background
+                                        // without opening a new terminal window
+#else
+  std::system(
+      "../app/build/sketch1 &"); // On Linux/macOS, run in the background
+#endif
 
   // Cleanup: remove the temporary files
   std::remove("../app/testsketch.cpp");
-  std::remove("../app/build/sketch1");
+  // std::remove("../app/build/sketch1");
 }
 
 int main() {
   // Create an SFML window that allows resizing and moving
-  sf::RenderWindow window(sf::VideoMode({800, 600}), "not an IDE",
+  sf::RenderWindow window(sf::VideoMode({720, 720}), "not an IDE",
                           sf::Style::Titlebar | sf::Style::Close |
                               sf::Style::Resize);
 
@@ -64,6 +81,18 @@ int main() {
 
   // Reload font texture
   ImGui::SFML::UpdateFontTexture();
+  ImGui::GetStyle().Colors[ImGuiCol_Button] =
+      ImVec4(0.647f, 0.616f, 0.518f, 1.0f);
+  ImGui::GetStyle().Colors[ImGuiCol_ButtonHovered] =
+      ImVec4(0.7f, 0.65f, 0.57f, 1.0f);
+  ImGui::GetStyle().Colors[ImGuiCol_ButtonActive] =
+      ImVec4(0.547f, 0.516f, 0.418f, 1.0f);
+  ImGui::GetStyle().Colors[ImGuiCol_FrameBg] =
+      ImVec4(0.647f, 0.616f, 0.518f, 1.0f);
+  ImGui::GetStyle().Colors[ImGuiCol_WindowBg] =
+      ImVec4(0.757f, 0.727f, 0.631f, 1.0f);
+  ImGui::GetStyle().Colors[ImGuiCol_Text] =
+      ImVec4(0.971f, 0.963f, 0.951f, 1.0f);
   setupEditor();
   window.setFramerateLimit(60);
 
@@ -83,41 +112,67 @@ int main() {
 
     // Set the next window position and size to fullscreen
     ImGui::SetNextWindowPos(ImVec2(0, 0)); // Position at top-left
-    ImGui::SetNextWindowSize(
-        ImVec2(static_cast<float>(window.getSize().x),
-               static_cast<float>(window.getSize().y))); // Fullscreen size
+    ImGui::SetNextWindowSize(ImVec2(static_cast<float>(window.getSize().x),
+                                    static_cast<float>(window.getSize().y)));
 
     // Begin the ImGui window with no title bar and borderless
     ImGui::Begin("Processing-style IDE", NULL,
-                 ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
+                 ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize |
+                     ImGuiWindowFlags_NoMove);
 
-    // Create a simple vertical layout
+    // Create a simple vertical layout with more padding and space
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding,
+                        ImVec2(10, 10)); // Add padding
+    ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing,
+                        ImVec2(10, 10)); // Add item spacing
+
+    // Editor (take up most of the space)
     ImGui::Columns(1, "IDE", false); // Single column layout
     editor.Render("Code Editor",
-                  ImVec2(window.getSize().x - 20, window.getSize().y - 80),
+                  ImVec2(window.getSize().x - 20,
+                         window.getSize().y - 100), // Leave space for buttons
                   false);
 
+    // Retrieve the code from the editor and update the code vector
     std::string text = editor.GetText();
     code.assign(text.begin(), text.end());
     code.push_back('\0'); // null-terminate the vector
 
     // --- Fixed Position Buttons ---
     ImGui::SetCursorPos(ImVec2(
-        10, window.getSize().y - 50)); // Position buttons at the bottom left
-    if (ImGui::Button("Run", ImVec2(100, 40))) { // Wider buttons for better UX
+        10, window.getSize().y - 80)); // Position buttons at the bottom left
+
+    // Run Button
+    if (ImGui::Button("Run", ImVec2(120, 40))) { // Wider buttons for better UX
       std::cout << "Running code...\n";
       execute_code(code);
     }
 
-    // Add some space between buttons
-    ImGui::SameLine(); // Place buttons on the same row
+    ImGui::SameLine();
+    // File Path Input (Textbox)
+    ImGui::Text("File Path:");    // Display the label
+    ImGui::SetNextItemWidth(200); // Set the width of the input field
+    ImGui::SameLine();
+    static char filePath[256] = "";
+    ImGui::InputText("##FilePathInput", filePath, sizeof(filePath));
 
-    if (ImGui::Button("Clear", ImVec2(100, 40))) {
-      code.clear();
-      code.push_back('\0'); // null-terminate, or inputtext will crash
+    // Save Button
+    ImGui::SameLine();
+    if (ImGui::Button("Save", ImVec2(120, 40))) {
+      // Check if the file path is valid
+      if (strlen(filePath) > 0) {
+        writeFile(code, filePath);
+      }
     }
 
+    // Reset style changes for better UI consistency
+    ImGui::PopStyleVar(2); // Pop both style vars (Padding & Spacing)
+
     ImGui::End(); // End the main window
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::F5)) {
+      execute_code(code); // Trigger code execution logic
+    }
 
     // Render everything
     window.clear(sf::Color::Black);

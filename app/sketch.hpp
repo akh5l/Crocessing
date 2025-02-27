@@ -12,6 +12,7 @@ public:
   int height;
   int mouseX;
   int mouseY;
+  bool noLoopFlag = false;
   std::string title = "Sketch";
 
   Sketch();
@@ -21,6 +22,7 @@ public:
   void windowTitle(std::string title);
   void size(int width, int height);
   void frameRate(float fps);
+  void noLoop();
 
   virtual void setup();
   virtual void draw();
@@ -41,6 +43,7 @@ public:
   void fill(int gray);
   void fill(int r, int g, int b);
   void fill(int r, int g, int b, int a);
+  void rect(float x, float y, float width, float height);
   void circle(float x, float y, float extent);
   void line(float x1, float y1, float x2, float y2);
   

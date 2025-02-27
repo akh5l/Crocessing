@@ -2047,15 +2047,15 @@ const TextEditor::Palette & TextEditor::GetLightPalette()
 			0xffc040a0, // Preproc identifier
 			0xff255525, // Comment (single line)
 			0xff455525, // Comment (multi line)
-			0xffffffff, // Background
+			0xffd9f3f8, // Background
 			0xff000000, // Cursor
 			0x20600000, // Selection
 			0xa00010ff, // ErrorMarker
 			0x80f08000, // Breakpoint
 			0xff505000, // Line number
-			0xAAEBE5C2, // Current line fill
-			0xA0EBE5C2, // Current line fill (inactive)
-			0xB5B9B28A, // Current line edge
+			0xffc2e5eb, // Current line fill
+			0xffc2e5eb, // Current line fill (inactive)
+			0x00B9B28A, // Current line edge
 		} };
 	return p;
 }
