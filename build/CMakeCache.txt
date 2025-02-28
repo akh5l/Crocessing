@@ -875,15 +875,6 @@ X11_xkbfile_INCLUDE_PATH:PATH=X11_xkbfile_INCLUDE_PATH-NOTFOUND
 X11_xkbfile_LIB:FILEPATH=X11_xkbfile_LIB-NOTFOUND
 
 //Value Computed by CMake
-imgui-test_BINARY_DIR:STATIC=/home/akhilsoman/Documents/VS Code/c++/imgui test/build
-
-//Value Computed by CMake
-imgui-test_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-imgui-test_SOURCE_DIR:STATIC=/home/akhilsoman/Documents/VS Code/c++/imgui test
-
-//Value Computed by CMake
 imgui_sfml_BINARY_DIR:STATIC=/home/akhilsoman/Documents/VS Code/c++/imgui test/build/_deps/imgui-sfml-build
 
 //Value Computed by CMake

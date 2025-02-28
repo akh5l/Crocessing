@@ -271,5 +271,4 @@ CMakeFiles/sketch1.dir/main.cpp.o: \
  /home/akhilsoman/Documents/VS\ Code/c++/imgui\ test/app/build/_deps/sfml-src/include/SFML/System/FileInputStream.hpp \
  /home/akhilsoman/Documents/VS\ Code/c++/imgui\ test/app/build/_deps/sfml-src/include/SFML/System/InputStream.hpp \
  /home/akhilsoman/Documents/VS\ Code/c++/imgui\ test/app/build/_deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
- /home/akhilsoman/Documents/VS\ Code/c++/imgui\ test/app/build/_deps/sfml-src/include/SFML/System/Sleep.hpp \
- /usr/include/c++/11/iostream
+ /home/akhilsoman/Documents/VS\ Code/c++/imgui\ test/app/build/_deps/sfml-src/include/SFML/System/Sleep.hpp
