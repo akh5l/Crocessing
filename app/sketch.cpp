@@ -171,7 +171,14 @@ float Sketch::noise(float x, float y) {
   float dotAB = gAB.x * fx + gAB.y * (fy - 1);
   float dotBB = gBB.x * (fx - 1) + gBB.y * (fy - 1);
 
+  float u = fade(fx);
+  float v = fade(fy);
 
+  // Bilinear interpolation of the dot products
+  float x1 = lerp(dotAA, dotBA, u);
+  float x2 = lerp(dotAB, dotBB, u);
+
+  return lerp(x1, x2, v);
 }
 void Sketch::initPermTable() {
   srand(time(nullptr));
@@ -184,7 +191,7 @@ float Sketch::perlinGradient1D(int hash) {
 }
 sf::Vector2f Sketch::perlinGradient2D(int hash) {
   float angle = (hash / 255.0f) * 2 * M_PI;  // angles between 0 and 2pi
-  return { cos(angle), sin(angle) };  // unit vector pointing in a random direction
+  return { static_cast<float>(cos(angle)), static_cast<float>(sin(angle)) };  // unit vector pointing in a random direction
 }
 
 // PROCESSING default methods
